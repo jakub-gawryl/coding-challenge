@@ -33,5 +33,33 @@
 			"",
 			"export { $TM_FILENAME_BASE };"
 		]
+	},
+	"rctx": {
+		"scope": "javascriptreact, typescriptreact",
+		"prefix": "rctx",
+		"body": [
+			"import { FC, ReactElement, createContext } from \"react\";",
+			"",
+			"type ${TM_FILENAME_BASE}Props = {",
+  		"  children?: ReactElement;",
+			"};",
+			"type ContextValues = {};",
+			"",
+			"const ${TM_FILENAME_BASE} = createContext<ContextValues>({});",
+			"const ${TM_FILENAME_BASE}Provider: FC<${TM_FILENAME_BASE}Props> = ({",
+  		"  children,",
+			"}) => {",
+  		"  return(",
+    	"    <${TM_FILENAME_BASE}.Provider value={{}}>",
+      "      {children}",
+	    "    </${TM_FILENAME_BASE}.Provider>",
+  		"  );",
+			"};",
+			"",
+			"export {",
+  		"  ${TM_FILENAME_BASE},",
+		  "  ${TM_FILENAME_BASE}Provider",
+			"}",
+		]
 	}
 }

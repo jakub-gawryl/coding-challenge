@@ -1,5 +1,7 @@
 import { FC, ReactNode } from 'react';
 import styled from 'styled-components';
+import { CanvasContextProvider } from '../../context/CanvasContext';
+import { Canvas } from './components/Canvas/Canvas';
 
 type Props = {
   children?: ReactNode;
@@ -19,6 +21,7 @@ const StyledWrapper = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
       min-width: 800px;
       min-height: 800px;
       box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
@@ -30,13 +33,16 @@ const StyledWrapper = styled.div`
 
 const CanvasWrapper: FC<Props> = ({ children }) => {
   return (
-    <StyledWrapper>
-      <div className="canvas-wrapper">
-        <div className="canvas-wrapper__inner">
-          {children}
+    <CanvasContextProvider>
+      <StyledWrapper>
+        <div className="canvas-wrapper">
+          <div className="canvas-wrapper__inner">
+            <Canvas />
+            {children}
+          </div>
         </div>
-      </div>
-    </StyledWrapper>
+      </StyledWrapper>
+    </CanvasContextProvider>
   );
 };
 
