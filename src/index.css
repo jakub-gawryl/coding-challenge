@@ -2,11 +2,18 @@
   margin: 0;
   padding: 0;
 }
+html, body {
+  height: 100%;
+}
 body {
   margin: 0;
   font-family:  sans-serif;
+  background-color: #f5f5f5;
+  overflow: hidden;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+#root {
+  height: 100%;
 }

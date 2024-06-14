@@ -1,12 +1,15 @@
 import { FC, ReactNode } from 'react';
+import { CanvasWrapper } from './components/CanvasWrapper';
 
 type Props = {
   children?: ReactNode;
 };
 
-const App: FC<Props> = () => {
+const App: FC<Props> = ({ children }) => {
   return (
-    <div>Hello world!</div>
+    <CanvasWrapper>
+      <h1>Hello world!</h1>
+    </CanvasWrapper>
   );
 };
 
